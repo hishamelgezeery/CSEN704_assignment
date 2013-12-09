@@ -1,17 +1,17 @@
 .newspaper{
   column-count:3;
   column-gap:80px;
-  column-rule:4px outset #000000;
+  column-rule:4px outset #cccccc;
 
   /* Firefox */
   -moz-column-count:3;
   -moz-column-gap:80px;
-  -moz-column-rule:4px outset #000000;
+  -moz-column-rule:4px outset #cccccc;
 
   /* Safari and Chrome */
   -webkit-column-count:3;
   -webkit-column-gap:80px;
-  -webkit-column-rule:4px outset #000000;
+  -webkit-column-rule:4px outset #cccccc;
   }
 
   @font-face {
@@ -32,8 +32,13 @@
 
 body {
   font-family: bodyFont;
+  font-size: 17px;
 }
 
+#content {
+  position: relative;
+  bottom:80px;
+}
 
 
 hr.style-five {
@@ -183,3 +188,78 @@ nav {
   position: relative;
   bottom: 90px;
 }
+
+#seperator {
+  position: relative;
+  bottom: 100px;
+}
+
+.titles {
+  font-family: myFirstFont;
+  font-size: 32px;
+  text-align: center;
+}
+
+#video-container {
+  width: 450px;
+  height: 350px;
+  position: relative;
+}
+
+#video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  -moz-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s;
+  background-image: linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.13, rgb(3,113,168)),
+    color-stop(1, rgb(0,136,204))
+  );
+}
+
+#video-container:hover #video-controls {
+  opacity: .9;
+}
+
+button {
+  background: rgba(0,0,0,.5);
+  border: 0;
+  color: #EEE;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#seek-bar {
+  width: 360px;
+}
+
+#volume-bar {
+  width: 60px;
+}
+
+#video {
+  filter: url(filters.svg#blackandwhite);
+}
+

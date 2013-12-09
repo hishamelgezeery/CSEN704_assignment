@@ -1,93 +1,156 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="newspaper.css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-  <script src="newspaper.js"></script>
-  <hr class='style-five'>
-  <div id="spanDate"></div>
-  <div class='header'>
-    The Gezeery worldwide news
-  </div>
-  <div id='rss'>
-    <img src="rss.gif">
-    RSS
-  </div>
-  <hr class='style-five'>
+  <head>
+    <link rel="stylesheet" type="text/css" href="newspaper.css">
+    <script src="newspaper.js"></script>
+    <hr class='style-five'>
+    <div id="spanDate"></div>
+    <div class='header'>
+      The Gezeery worldwide news
+    </div>
+    <div id='rss'>
+      <img src="rss.gif">
+      RSS
+    </div>
+    <hr class='style-five'>
     <nav>
-  <ul class="nav">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Business</a>
-      <ul>
-        <li><a href="#">Economy</a></li>
-        <li><a href="#">Small businesses</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Market</a>
-      <ul>
-        <li><a href="#">African Markets</a>
+      <ul class="nav">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Business</a>
           <ul>
-            <li><a href="#">Egypt</a></li>
-            <li><a href="#">Morocco</a></li>
+            <li><a href="#">Economy</a></li>
+            <li><a href="#">Small businesses</a></li>
           </ul>
         </li>
-        <li><a href="#">Stocks</a></li>
-        <li><a href="#">Funds</a></li>
-        <li><a href="#">Currencies</a></li>
+        <li><a href="#">Market</a>
+          <ul>
+            <li><a href="#">African Markets</a>
+              <ul>
+                <li><a href="#">Egypt</a></li>
+                <li><a href="#">Morocco</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Stocks</a></li>
+            <li><a href="#">Funds</a></li>
+            <li><a href="#">Currencies</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Politics</a>
+          <ul>
+            <li><a href="#">Politics home</a></li>
+            <li><a href="#">Supreme court</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
       </ul>
-    </li>
-    <li><a href="#">Sports</a></li>
-    <li><a href="#">Politics</a>
-      <ul>
-        <li><a href="#">Politics home</a></li>
-        <li><a href="#">Supreme court</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-  <hr class='style-five'>
-</head>
-<body onload='date_onload()'>
-<h2>'He is now at peace': Nelson Mandela dead at 95</h2>
-<table border='0'>
- <tr>
- <td width='30%' valign='top'>
-  <div id="show-case">
-        <img class="img" src="nelson_mandela.jpg">
-        <img class="img" src="nelson_mandela2.jpg">
-        <img class="img" src="nelson_mandela3.jpg">
+    </nav>
+    <hr class='style-five'>
+  </head>
+  <body onload='date_onload();video_controls()'>
+    <h2>'He is now at peace': Nelson Mandela dead at 95</h2>
+    <table border='0'>
+     <tr>
+     <td width='30%' valign='top'>
+      <div id="show-case">
+            <img class="img" src="nelson_mandela.jpg">
+            <img class="img" src="nelson_mandela2.jpg">
+            <img class="img" src="nelson_mandela3.jpg">
+      </div>
+      <div id='first_column_story'>
+        <b><em>By Tracy Connor, Staff Writer, NBC News</em></b>
+        <br>
+      Nelson Mandela, the revered South African anti-apartheid icon who spent 27 years in prison, led his country to democracy and became its first black president, died Thursday at home. He was 95.
+      "He is now resting," said South African President Jacob Zuma. "He is now at peace."
+      "Our nation has lost its greatest son," he continued. "Our people have lost a father."
+      A state funeral will be held, and Zuma called for mourners to conduct themselves with "the dignity and respect" that Mandela personified.
+      "Wherever we are in the country, wherever we are in the world ... let us reaffirm his vision of a society in which none is exploited, oppressed or dispossessed by another," he said as tributes began pouring in from across the world. President Obama said his first political action was an anti-apartheid protest inspired by Mandela, who "achieved more than could be expected of any man."
+      </div>
+
+     </td>
+     <td width="5%"></td>
+     <td width="30%" valign="TOP">
+      "I cannot fully imagine my own life without the example Nelson Mandela set," he said.
+    Obama called Zuma on Thursday evening to express his heartfelt condolences, according to the White House.
+    Though he was in power for only five years, Mandela was a figure of enormous moral influence the world over - a symbol of revolution, resistance and triumph over racial segregation.<br />
+    He inspired a generation of activists, left celebrities and world leaders star-struck, won the Nobel Peace Prize and raised millions for humanitarian causes.
+    South Africa is still bedeviled by challenges, from class inequality to political corruption to AIDS. And with Mandela's death, it has lost a beacon of optimism.
+    <br />In his jailhouse memoirs, Mandela wrote that even after spending so many years in a Spartan cell on Robben Island - with one visitor a year and one letter every six months - he still had faith in human nature. <br />
+     </td>
+     <td width="5%"></td>
+     <td width="30%" valign="TOP">
+      <div id="video-container">
+        <!-- Video -->
+        <video id="video" width="450" height="300">
+          <source src="nelson_mandela.mp4" type="video/mp4">
+          <p>
+            Your browser doesn't support HTML5 video.
+            <a href="nelson_mandela.mp4">Download</a> the video instead.
+          </p>
+        </video>
+        <!-- Video Controls -->
+        <div id="video-controls">
+          <button type="button" id="play-pause" class="play">Play</button>
+          <input type="range" id="seek-bar" value="0">
+          <button type="button" id="mute">Mute</button>
+          <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+          <button type="button" id="full-screen">Full-Screen</button>
+        </div>
+      </div>
+      <br />
+      <em><b>"No one is born hating another person because of the color of his skin, or his background, or his religion," he wrote in "Long Walk to Freedom."
+      "People must learn to hate, and if they can learn to hate, they can be taught to love, for love comes more naturally to the human heart than its opposite."" </em>  </b>
+     </td>
+   </tr>
+  </table>
+  <hr id='seperator'>
+  <div id='content'>
+    <table border='0'>
+      <tr>
+        <td width='25%' valign='top'>
+          <div class='titles'>Headlines</div>
+            <div style="border-style: none;border-width: 0;border-color: #FFFFFF;overflow: visible;"><div id="newsblock26950867" style="word-wrap: break-word; padding: 5px;">
+          <!-- DO NOT ALTER, REMOVE, OR IN ANY WAY TRY TO HIDE THE FOLLOWING TAG OR ITS CONTENTS OR BLASTCASTA WILL NOT FUNCTION PROPERLY. --><div align="center" style="font-size: 8pt;"><br /><a href="http://www.blastcasta.com/" style="" target="_top"><b>News Widgets &amp; Tickers</b><br />Powered by BlastCasta</a></div>
+          </div></div>
+
+          <script id="scrnewsblock26950867" type="text/javascript"></script>
+          <script type="text/javascript"> /* <![CDATA[ */
+          setTimeout('document.getElementById(\'scrnewsblock26950867\').src = (document.location.protocol == \'https:\' ? \'https\' : \'http\') + \'://www.poweringnews.com/newsjavascript.aspx?feedurl=http%3A//newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml&maxitems=5&showfeedtitle=0&showtitle=1&showdate=1&showsummary=1&showauthor=1&showactionsbox=0&showrsslink=0&showcopyright=1&opennewwindow=1&inheritstyles=1&bgcolor=%23FFFFFF&titlefontsize=12&summaryfontsize=11&fontfamily=Garamond&titlecolor=%230000CC&summarycolor=%23000000&sepstyle=solid&sepcolor=%23A0A0A0&objectid=newsblock26950867\'', 500);
+           /* ]]> */ </script>
+        </td>
+        <td width="5%"></td>
+        <td width="25%" valign="TOP">
+
+           <div class='titles'>Middle East</div>
+              <div style="border-style: none;border-width: 0;border-color: #FFFFFF;overflow: visible;"><div id="newsblock11220997" style="word-wrap: break-word; padding: 5px;">
+          <!-- DO NOT ALTER, REMOVE, OR IN ANY WAY TRY TO HIDE THE FOLLOWING TAG OR ITS CONTENTS OR BLASTCASTA WILL NOT FUNCTION PROPERLY. --><div align="center" style="font-size: 8pt;"><br /><a href="http://www.blastcasta.com/" style="" target="_top"><b>News Widgets &amp; Tickers</b><br />Powered by BlastCasta</a></div>
+          </div></div>
+
+          <script id="scrnewsblock11220997" type="text/javascript"></script>
+          <script type="text/javascript"> /* <![CDATA[ */
+          setTimeout('document.getElementById(\'scrnewsblock11220997\').src = (document.location.protocol == \'https:\' ? \'https\' : \'http\') + \'://www.poweringnews.com/newsjavascript.aspx?feedurl=http%3A//newsrss.bbc.co.uk/rss/newsonline_world_edition/middle_east/rss.xml&maxitems=5&showfeedtitle=0&showtitle=1&showdate=1&showsummary=1&showauthor=1&showactionsbox=0&showrsslink=0&showcopyright=1&opennewwindow=1&inheritstyles=1&bgcolor=%23FFFFFF&titlefontsize=12&summaryfontsize=11&fontfamily=Garamond&titlecolor=%230000CC&summarycolor=%23000000&sepstyle=solid&sepcolor=%23A0A0A0&objectid=newsblock11220997\'', 500);
+           /* ]]> */ </script>
+        </td>
+       <td width="5%"></td>
+       <td width="25%" valign="TOP">
+         <div class='titles'>Entertainment</div>
+        <div style="border-style: none;border-width: 0;border-color: #FFFFFF;overflow: visible;"><div id="newsblock26697233" style="word-wrap: break-word; padding: 5px;">
+        <!-- DO NOT ALTER, REMOVE, OR IN ANY WAY TRY TO HIDE THE FOLLOWING TAG OR ITS CONTENTS OR BLASTCASTA WILL NOT FUNCTION PROPERLY. --><div align="center" style="font-size: 8pt;"><br /><a href="http://www.blastcasta.com/" style="" target="_top"><b>News Widgets &amp; Tickers</b><br />Powered by BlastCasta</a></div>
+        </div></div>
+
+        <script id="scrnewsblock26697233" type="text/javascript"></script>
+        <script type="text/javascript"> /* <![CDATA[ */
+        setTimeout('document.getElementById(\'scrnewsblock26697233\').src = (document.location.protocol == \'https:\' ? \'https\' : \'http\') + \'://www.poweringnews.com/newsjavascript.aspx?feedurl=http%3A//newsrss.bbc.co.uk/rss/newsonline_world_edition/entertainment/rss.xml&maxitems=5&showfeedtitle=0&showtitle=1&showdate=1&showsummary=1&showauthor=1&showactionsbox=0&showrsslink=0&showcopyright=1&opennewwindow=1&inheritstyles=1&bgcolor=%23FFFFFF&titlefontsize=12&summaryfontsize=11&fontfamily=Garamond&titlecolor=%230000CC&summarycolor=%23000000&sepstyle=solid&sepcolor=%23A0A0A0&objectid=newsblock26697233\'', 500);
+           /* ]]> */ </script>
+       </td>
+      </tr>
+    </table>
   </div>
-  <div id='first_column_story'>
-    <b><em>By Tracy Connor, Staff Writer, NBC News</em></b>
-    <br>
-  Nelson Mandela, the revered South African anti-apartheid icon who spent 27 years in prison, led his country to democracy and became its first black president, died Thursday at home. He was 95.
-  "He is now resting," said South African President Jacob Zuma. "He is now at peace."
-  "Our nation has lost its greatest son," he continued. "Our people have lost a father."
-  A state funeral will be held, and Zuma called for mourners to conduct themselves with "the dignity and respect" that Mandela personified.
-  "Wherever we are in the country, wherever we are in the world ... let us reaffirm his vision of a society in which none is exploited, oppressed or dispossessed by another," he said as tributes began pouring in from across the world.
+  <hr id='seperator'>
+  <div id='seperator'>
+    Gezeery Inc. is not responsible for the content of this site, at all :)
+    <p id="to-top-link" style="text-align:center; display:none;"><a href="#">Back to Top</a></p>
+    <script type="text/javascript">if(document.body.clientHeight > 1000) document.getElementById('to-top-link').style.display = 'block';</script>
   </div>
-
- </td>
- <td width="5%"></td>
- <td width="30%" valign="TOP">
-  President Obama said his first political action was an anti-apartheid protest inspired by Mandela, who "achieved more than could be expected of any man."
-  "I cannot fully imagine my own life without the example Nelson Mandela set," he said.
-Obama called Zuma on Thursday evening to express his heartfelt condolences, according to the White House.
-Though he was in power for only five years, Mandela was a figure of enormous moral influence the world over - a symbol of revolution, resistance and triumph over racial segregation.<br />
-He inspired a generation of activists, left celebrities and world leaders star-struck, won the Nobel Peace Prize and raised millions for humanitarian causes.
-South Africa is still bedeviled by challenges, from class inequality to political corruption to AIDS. And with Mandela's death, it has lost a beacon of optimism.
-<br />In his jailhouse memoirs, Mandela wrote that even after spending so many years in a Spartan cell on Robben Island - with one visitor a year and one letter every six months - he still had faith in human nature. <br />
- </td>
- <td width="5%"></td>
- <td width="30%" valign="TOP">
-  <em><b>"No one is born hating another person because of the color of his skin, or his background, or his religion," he wrote in "Long Walk to Freedom."
-"People must learn to hate, and if they can learn to hate, they can be taught to love, for love comes more naturally to the human heart than its opposite."" </em></b>
- </td>
- </tr>
-</table>
-
-
-
-</body>
+  </body>
 </html>
